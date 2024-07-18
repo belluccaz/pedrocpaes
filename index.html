@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfólio</title>
+    <link rel="stylesheet" href="./public/css/main.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Barra de Navegação -->
+    <nav class="nav-menu">
+      <div class="logo">
+        <img src="./img/Verso.svg" alt="Logotipo" />
+      </div>
+      <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <ul class="nav-list">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#portfolio">Projetos Recentes</a></li>
+        <li><a href="#about">Sobre Mim</a></li>
+        <li><a href="#contact">Contato</a></li>
+      </ul>
+    </nav>
+
+    <!-- Seção de Sobre -->
+    <main>
+      <div class="container">
+        <div class="video-container hidden-767">
+          <video autoplay muted loop id="background-video">
+            <source
+              src="./videos/Documentário «A Arte de Ser».mp4"
+              type="video/mp4"
+            />
+            Seu navegador não suporta a tag de vídeo.
+          </video>
+        </div>
+      </div>
+      <!-- Seção de Portfólio -->
+      <section id="portfolio">
+        <h2>Galeria</h2>
+        <div class="project-gallery">
+          <div class="project-item">
+            <img src="./img/desavença-italiana.jpeg" alt="Projeto 1" />
+            <h3>Desavença Italiana</h3>
+            <p>
+              Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
+              consectetur, adipisci velit...
+            </p>
+            <a href="https://vimeo.com/709944201" target="_blank" class="btn"
+              >Ver Projeto</a
+            >
+          </div>
+          <div class="project-item">
+            <img src="./img/entre-as-mulheres.jpeg" alt="Projeto 2" />
+            <h3>Entre as Mulheres</h3>
+            <p>
+              Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
+              consectetur, adipisci velit...
+            </p>
+            <a href="https://linkdoprojeto2.com" target="_blank" class="btn"
+              >Ver Projeto</a
+            >
+          </div>
+          <!-- Adicione mais projetos conforme necessário -->
+        </div>
+      </section>
+
+      <section id="about">
+        <h2>Sobre Mim</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut efficitur
+          libero vel mattis fringilla. Mauris efficitur scelerisque leo, id
+          condimentum nisl tincidunt quis. Etiam sed arcu eu orci gravida
+          consequat non in lectus. Donec feugiat lectus non justo blandit, eu
+          dignissim ipsum placerat. Nullam non ligula id risus fermentum
+          hendrerit. Etiam ullamcorper, justo nec condimentum consectetur,
+          mauris risus sodales dui, sed lacinia purus erat vel elit. Integer
+          ornare iaculis porttitor. Class aptent taciti sociosqu ad litora
+          torquent per conubia nostra, per inceptos himenaeos. Pellentesque
+          sollicitudin tellus et mollis aliquet. Vestibulum accumsan
+          sollicitudin lacus. Integer at sem quis urna eleifend ultricies.
+          Maecenas at nisl eu ex vulputate tempus sed quis leo.
+        </p>
+      </section>
+
+      <!-- Seção de Contato -->
+      <section id="contact">
+        <h2>Contato</h2>
+        <p>📧 pedrocorreiaedit@gmail.com</p>
+      </section>
+    </main>
+
+    <footer>
+      <div class="social-links">
+        <a href="https://www.instagram.com/pedrocorreiaedit_/?utm_source=ig_web_button_share_sheet" target="_blank"
+          ><img
+            class="insta"
+            src="./img/instagram-logo-E0067A1403-seeklogo.com.png"
+            alt="Instagram"
+        /></a>
+        <a href="https://www.behance.net/pedrocorreiaedit" target="_blank"
+          ><img class="Beehance" src="./img/behance-1.svg" alt="Behance"
+        /></a>
+        <a
+          href="https://www.linkedin.com/in/pedro-correia-915310204/"
+          target="_blank"
+          ><img class="linkedin" src="./img/linkedin-logo.png" alt="LinkedIn"
+        /></a>
+      </div>
+      <br />
+      <a href="https://belluccaz.github.io/portfolio" target="_blank"
+        ><img class="logolba" src="./img/logolba.png" alt="Logo"
+      /></a>
+      <p>&copy; 2024</p>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./public/js/scripts.js"></script>
+  </body>
+</html>

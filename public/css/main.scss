@@ -1,0 +1,296 @@
+// Variáveis
+$black: #000000;
+$white: #ffffff;
+$light-gray: #d9d9d9;
+$gray: rgba(95, 95, 95, 0.297);
+$border-color: #00ccff;
+$button-bg: #313131;
+$button-hover-bg: darken($button-bg, 10%);
+$button-text-color: #ffffff;
+$font-primary: "Montserrat", sans-serif;
+$font-secondary: "Futura", sans-serif;
+
+// Reset básico
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Font e padrão do corpo
+body {
+  font-family: $font-primary;
+}
+
+// Estilos da Barra de Navegação
+nav {
+  background-color: $black;
+  padding: 1em;
+  position: relative;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .logo {
+    margin-left: 1em;
+
+    img {
+      width: 500px;
+      height: auto; // Manter a proporção da imagem
+    }
+  }
+
+  .menu-toggle {
+    display: none;
+    cursor: pointer;
+
+    .bar {
+      display: block;
+      width: 25px;
+      height: 3px;
+      margin: 5px auto;
+      background-color: $white;
+      transition: all 0.3s;
+    }
+  }
+
+  .nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    flex-grow: 1;
+    margin-left: 2em; // Espaçamento entre o logotipo e os itens da lista
+
+    li {
+      margin: 0 1em;
+
+      a {
+        color: $white;
+        text-decoration: none;
+        font-weight: bold;
+        font-family: $font-secondary;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &.active {
+      display: block;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+  }
+}
+
+main {
+  background-color: $light-gray;
+}
+
+// Container para o vídeo responsivo
+.container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+
+  .video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      transform: translate(-50%, -50%);
+      object-fit: cover; /* This ensures the video covers the container while maintaining aspect ratio */
+    }
+  }
+}
+
+// Estilos das Seções
+section {
+  padding: 4em 2em;
+  text-align: center;
+
+  h2 {
+    font-size: 2.5em;
+    margin-bottom: 1em;
+  }
+
+  p {
+    font-size: 1.2em;
+    line-height: 1.5;
+  }
+}
+
+// Estilos para a galeria de projetos
+.project-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2em;
+}
+
+.project-item {
+  background-color: $white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  width: 300px;
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  h3 {
+    font-size: 1.5em;
+    margin: 0.5em 0;
+  }
+
+  p {
+    padding: 0 1em;
+    font-size: 1em;
+    color: #000000;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.5em 1em;
+    margin: 1em 0;
+    background-color: $button-bg;
+    color: $button-text-color;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: $button-hover-bg;
+    }
+  }
+}
+
+footer {
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  padding: 20px;
+  background-color: $gray;
+  color: $black;
+  border-top: 1px solid $border-color;
+
+  .logolba {
+    width: 100px;
+  }
+
+  .social-links {
+    img {
+      width: 30px;
+      margin: 0 10px;
+    }
+  }
+}
+
+// Font-Face para Futura
+@font-face {
+  font-family: $font-secondary;
+  src: url("fonts/Futura.eot"); /* IE9 Compat Modes */
+  src: url("fonts/Futura.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */ url("fonts/Futura.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("fonts/Futura.woff") format("woff"),
+    /* Modern Browsers */ url("fonts/Futura.ttf") format("truetype"),
+    /* Safari, Android, iOS */ url("fonts/Futura.svg#Futura") format("svg"); /* Legacy iOS */
+  font-weight: normal;
+  font-style: normal;
+}
+
+// Aplicar Futura na navegação
+nav ul li a {
+  font-family: $font-secondary;
+}
+
+// Mixins para responsividade
+@mixin respond-to($media) {
+  @if $media == "small" {
+    @media (max-width: 768px) {
+      @content;
+    }
+  }
+}
+
+// Responsividade
+@include respond-to("small") {
+  nav {
+    flex-direction: column;
+    align-items: center;
+
+    .logo {
+      margin-left: 1em;
+      margin-bottom: 1em;
+
+      img {
+        width: 400px; // Ajuste o tamanho do logotipo para telas menores
+      }
+    }
+
+    .menu-toggle {
+      display: block;
+    }
+
+    .nav-list {
+      display: none;
+      width: 100%; // Ocupar toda a largura disponível
+      margin-left: 0; // Remover margem esquerda em telas menores
+
+      li {
+        margin: 0.5em 1em;
+      }
+    }
+
+    .nav-list.active {
+      display: flex;
+    }
+  }
+
+  .video-container {
+    height: fit-content;
+  }
+
+  .project-gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-item {
+    width: 90%;
+  }
+}
+
+.project-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+
+  &.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
